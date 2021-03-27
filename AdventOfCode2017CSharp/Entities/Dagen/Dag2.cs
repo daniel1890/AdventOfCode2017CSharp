@@ -48,12 +48,41 @@ namespace AdventOfCode2017CSharp.Entities.Dagen
 
         public override void CalcPart2()
         {
-            throw new NotImplementedException();
+            foreach (string row in _lines)
+            {
+                string[] split = row.Split("	");
+
+                foreach (string getalString in split)
+                {
+                    int huidigGetal = Int32.Parse(getalString);
+
+                    foreach (string getalString2 in split)
+                    {
+                        double getalDouble = (double)huidigGetal / (double)Int32.Parse(getalString2);
+                        double getalFloored = Math.Floor((double)huidigGetal / (double)Int32.Parse(getalString2));
+
+                        double som = getalDouble - getalFloored;
+
+                        if (som == 0)
+                        {
+                            if (getalDouble != 1 && getalFloored != 1)
+                            {
+                                int uitkomst = huidigGetal / Int32.Parse(getalString2);
+                                _ans2 += uitkomst;
+                            }
+                            //Console.WriteLine($"{getalDouble} en{getalFloored}");
+                        }
+                        //Console.WriteLine((double)huidigGetal / (double)Int32.Parse(getalString2));
+                        //Console.WriteLine(Math.Floor((double)huidigGetal / (double)Int32.Parse(getalString2)));
+                    }
+                }
+            }
         }
 
         public override void RunDag()
         {
             CalcPart1();
+            CalcPart2();
             Console.WriteLine(this.ToString());
         }
     }

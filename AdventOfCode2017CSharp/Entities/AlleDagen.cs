@@ -16,7 +16,7 @@ namespace AdventOfCode2017CSharp.Entities
 
         public AlleDagen()
         {
-            test = true;
+            test = false;
 
             _dag1 = new Dag1();
             _dag2 = new Dag2();
