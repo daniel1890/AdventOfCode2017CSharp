@@ -7,10 +7,14 @@
 
   <ItemGroup>
     <None Remove="TextFiles\Dag1.txt" />
+    <None Remove="TextFiles\Dag2.txt" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="TextFiles\Dag1.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TextFiles\Dag2.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>
