@@ -13,13 +13,15 @@ namespace AdventOfCode2017CSharp.Entities
 
         private Dag1 _dag1;
         private Dag2 _dag2;
+        private Dag4 _dag4;
 
         public AlleDagen()
         {
-            test = false;
+            test = true;
 
             _dag1 = new Dag1();
             _dag2 = new Dag2();
+            _dag4 = new();
         }
 
         public void RunAlleDagen()
@@ -31,7 +33,7 @@ namespace AdventOfCode2017CSharp.Entities
             }
             else
             {
-                _dag2.RunDag();
+                _dag4.RunDag();
             }
         }
     }
